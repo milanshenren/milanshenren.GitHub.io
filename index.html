@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>众烬world - 登入</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .login-container {
+            width: 900px;
+            height: 300px;
+            background: #2a2a2a;
+            border-radius: 4px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+            display: flex;
+            overflow: hidden;
+            border: 1px solid #3a3a3a;
+        }
+        
+        .left-panel {
+            flex: 1;
+            background: #242424;
+            padding: 40px;
+            color: #e8e8e8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid #3a3a3a;
+            text-align: center;
+        }
+        
+        .right-panel {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #2a2a2a;
+        }
+        
+        .brand-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #f5f5f5;
+            letter-spacing: 1px;
+        }
+        
+        .login-subtitle {
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .welcome-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #b8b8b8;
+        }
+        
+        .welcome-text .italic {
+            font-style: italic;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .login-form {
+            width: 100%;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d8d8d8;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            background: #1e1e1e;
+            border: 1px solid #4a4a4a;
+            border-radius: 3px;
+            font-size: 13px;
+            color: #e8e8e8;
+            transition: all 0.2s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #6a6a6a;
+            background: #1a1a1a;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #3a3a3a;
+            color: #e8e8e8;
+            border: 1px solid #4a4a4a;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .submit-btn:hover {
+            background: #444;
+            border-color: #6a6a6a;
+        }
+        
+        .features {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #808080;
+            text-align: center;
+        }
+        
+        .features a {
+            color: #a8a8a8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .features a:hover {
+            color: #d8d8d8;
+        }
+        
+        .system-info {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #3a3a3a;
+            font-size: 11px;
+            color: #707070;
+        }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+            }
+            
+            .left-panel, .right-panel {
+                padding: 30px;
+            }
+            
+            .left-panel {
+                border-right: none;
+                border-bottom: 1px solid #3a3a3a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- 左边内容区域 -->
+        <div class="left-panel">
+            <div class="brand-title">「 众烬world 」</div>
+            <div class="login-subtitle">登入</div>
+            <div class="welcome-text">
+                <span class="italic">欢迎访问「 众烬world 」 。</span>
+                <span>请使用您的个人账户登入以访问授权内容。</span>
+                <br>
+                <span>系统将记录所有登入活动以确保安全性。</span>
+            </div>
+        </div>
+        
+        <!-- 右边登录表单区域 -->
+        <div class="right-panel">
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" placeholder="输入用户名" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="输入密码" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">登入</button>
+                
+                <div class="features">
+                    <p><a href="#">忘记密码?</a> | <a href="#">账户注册</a></p>
+                    <p style="margin-top: 8px;">确保在安全环境下操作</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 表单验证和提交处理
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (!username || !password) {
+                alert('请输入完整的登入信息');
+                return;
+            }
+            
+            // 模拟登入过程
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.textContent = '登入中...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                // 这里可以添加实际的登入逻辑
+                console.log('登入信息:', { username, password });
+                alert('登入请求已提交');
+                
+                // 恢复按钮状态
+                submitBtn.textContent = '登入';
+                submitBtn.disabled = false;
+            }, 1000);
+        });
+    </script>
+</body>
+                  </html>
